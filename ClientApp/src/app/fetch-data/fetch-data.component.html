@@ -1,24 +1,35 @@
-<h1 id="tableLabel">Weather forecast</h1>
+<h1>Donate!</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+  <!-- Identify your business so that you can collect the payments. -->
+  <input type="hidden" name="business" value="*********">
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
-    </tr>
-  </tbody>
-</table>
+  <!-- Specify a Subscribe button. -->
+  <input type="hidden" name="cmd" value="_xclick-subscriptions">
+
+  <!-- Set the terms of the regular subscription. -->
+  <input type="hidden" name="currency_code" value="AUD">
+
+  <input type="radio" name="a3" value="$10"> $10
+  <input type="radio" name="a3" value="$50"> $50
+  <input type="radio" name="a3" value="$100"> $100
+  <input type="radio" name="a3" value="$200"> $200
+  <input type="radio" name="a3" value="$500"> $500
+  <br>
+  <input type="hidden" name="p3" value="1">
+  <input type="radio" name="t3" value="W"> Weekly
+  <input type="radio" name="t3" value="M"> Monthly
+  <input type="radio" name="t3" value="Y"> Yearly
+  <br>
+
+  <!-- Set recurring payments until canceled. -->
+  <input type="hidden" name="src" value="1">
+
+  <!-- Display the payment button. -->
+  <input type="image" name="submit"
+  src="https://www.paypalobjects.com/en_AU/i/btn/btn_donateCC_LG.gif"
+  alt="Subscribe">
+  <img alt="" width="1" height="1"
+  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>

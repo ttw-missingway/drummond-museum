@@ -1,0 +1,6 @@
+.picsum-img-wrapper img {
+    display: block;
+    max-height: 768px;
+    width: auto;
+    height: auto;
+}
